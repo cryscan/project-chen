@@ -32,6 +32,10 @@ Game companies and studios making 3D games will benefit mostly on this project, 
 For large companies, though motion capture is available to them, it is still not easy to be applied on non-humanoid characters.
 For small game studios, this technique can save their games from low quality animations and complex animation controllers.
 
-In terms of individuals, the project will affect animators/animation programmers the most.
+In terms of individuals working in those companies, the project will affect animation programmers the most.
 Making complicated animation state machines will be a past.
 The design of character controller won't be ever more intuitive, since all animation staff is totally decoupled from it.
+
+It's still not clear to me how it will change the life of animators.
+Not all animations can be generated, and key-framing is still needed for stylized animations.
+Maybe it can release them from key-framing animations that must look physically correct (which are sometimes more difficult).
