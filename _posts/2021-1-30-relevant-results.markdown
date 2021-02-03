@@ -4,7 +4,8 @@ title:  "Relevant Research Results"
 categories: update
 ---
 The goal of Project Chen is to study procedural animation techniques which
-- look physically realistic
+- generate animations look physically realistic
+- can be used in real-time applications
 - are affordable to indie game studios
 
 The search for academic results is mainly in the computer graphics field and the robotics field.
