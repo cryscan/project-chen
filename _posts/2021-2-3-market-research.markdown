@@ -26,3 +26,12 @@ The products related to this project are mainly video games.
 It may also bring benefit to the making of 3D animation films.
 3D modeling tools and game engines can integrate the animation generator, too.
 Also it can serve as an alternative to motion capture studios.
+
+# Stakeholders
+Game companies and studios making 3D games will benefit mostly on this project, especially for small game studios.
+For large companies, though motion capture is available to them, it is still not easy to be applied on non-humanoid characters.
+For small game studios, this technique can save their games from low quality animations and complex animation controllers.
+
+In terms of individuals, the project will affect animators/animation programmers the most.
+Making complicated animation state machines will be a past.
+The design of character controller won't be ever more intuitive, since all animation staff is totally decoupled from it.
