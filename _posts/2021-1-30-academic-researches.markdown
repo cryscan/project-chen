@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Relevant Research Results"
+title:  "Relevant Academic Researches"
 categories: update
 ---
 The goal of Project Chen is to study procedural animation techniques which
