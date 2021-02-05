@@ -27,6 +27,16 @@ It may also bring benefit to the making of 3D animation films.
 3D modeling tools and game engines can integrate the animation generator, too.
 Also it can serve as an alternative to motion capture studios.
 
+- Cited from [Game Anim](https://www.gameanim.com/2016/05/03/motion-matching-ubisofts-honor/), motion matching techniques have been applied in more than 5 projects of Ubisoft including *Assassin's Creed III*
+- According to [this article](https://www.pushsquare.com/news/2019/09/the_last_of_us_2s_motion_matching_system_sounds_like_the_future_of_animation_in_games),
+Naughty Dog has used motion matching in *The Last of Us: Part II*
+- Also in *Uncharted*, characters have physical interaction by using motor controllers following motion capture clips
+- Wolfire Games' *Overgrowth* uses only procedurally generated animations without any key-framing or motion capture data,
+  however, these animations are purely kinematic (no physical interaction),
+  though they've tried their best to make them look physically correct
+- Videocult's *Rain World* uses procedural animations to make character movements fluent and interactive with the environment,
+  which is also purely kinematic
+
 # Stakeholders
 Game companies and studios making 3D games will benefit mostly on this project, especially for small game studios.
 For large companies, though motion capture is available to them, it is still not easy to be applied on non-humanoid characters.
