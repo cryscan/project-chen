@@ -14,6 +14,7 @@ So not to be in detail, I plan to do it in the following steps:
 2. Design different tasks for the agent to learn in
 3. Design sensors as the inputs to the agent
 4. Try to either learn a kinematics policy (which generates kinematics animation directly from inputs) or a dynamics policy (which outputs actions)
-5. Make a lovely non-humanoid character and make it a parkour game
+5. Import the policy into the game engine
+6. Make a lovely non-humanoid character and make it a parkour game
 
 If the above plan fails somehow, I also have a fallback option: try using trajectory optimization clips and motion matching.
