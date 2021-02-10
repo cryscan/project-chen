@@ -3,7 +3,7 @@ layout: post
 title:  "Simulator and Inverse Dynamics"
 categories: update
 ---
-## Framework and Simulator
+# Framework and Simulator
 To be able to manage the project code properly, it's best to have all the stuff fit in a framework.
 By searching through the internet, I find two [matlab](https://github.com/robbierolin/Contact-Invariant-Optimization-Project) [repositories](https://github.com/rshum19/CIO) related to Contact Invariant Optimization.
 I tried both, only the first one works for me.
@@ -39,7 +39,7 @@ Here is a screenshot I took from the simulator.
 
 Since the framework hasn't implemented CIO yet, I have to do it by myself.
 
-## Inverse Dynamics
+# Inverse Dynamics
 The most complex formulas in the paper are to recover the contact forces and actuated controls using inverse dynamics.
 First define the following symbols:
 - Given $q$ the character pose (torso pose concatenated with joint positions)
@@ -69,3 +69,10 @@ I have to look into `Bullet`'s source code to see how the function is handled th
 3. Finally I find [the python command processing code](https://github.com/bulletphysics/bullet3/blob/abea1a848411cf53385fb8288c89db05e5751ef7/examples/SharedMemory/PhysicsServerCommandProcessor.cpp#L11121). It turns out that when the `flags` is set to 1, it uses so called "RBD model" instead. To have the normal mode (when `flags` is set to 0) work correctly, the dimensions of the input vectors ($q$, $\dot{q}$ and $\ddot{q}$) should include the additional degrees of freedom of the torso. Moreover, the code for preprocessing floating-based models seems to forget to populate its `q` vector. I raise an issue and fix it on my own.
 
 I then test the results by applying the calculated $\tau(q, \dot{q}, 0)$ directly onto the torques of joints to see whether that compensates the gravity, and it goes good.
+
+# Next Step
+After solving the issue in the framework, I can continue implementing CIO.
+There are several things I need to do next week:
+- Figure out how to formulate $J(q)$
+- Formulate the physics cost and the contact invariant cost
+- Figure out how to use `cvxopt` to do quadratic programming
