@@ -41,3 +41,4 @@ Since the framework hasn't implemented CIO yet, I have to do it by myself.
 
 ## Inverse Dynamics
 The most complex formulas in the paper are to recover the contact forces and actuated controls using inverse dynamics.
+$$ E = m c^2 $$
