@@ -1,0 +1,85 @@
+---
+layout: post
+title:  "Parametrization and Costs"
+categories: update
+---
+There is no visual feedbacks this week, because I was mainly dealing with coding stuff.
+I have implemented main cost functions for CIO.
+
+# Optimization and Parametrization
+I decide to use the `scipy` implementation of `l-bfgs-b` algorithm to optimize the cost function.
+One reason is that it is the algorithm used in the paper,
+and the other is that it does not require explicit gradient input.
+I notice that it is hard to get the analytical expression for the gradient of the cost function even with the help of auto-differentiation,
+because there is another optimization loop inside the cost function itself.
+But the optimization algorithm should work even without providing the gradient.
+
+Let's take a look at the basic configurations of the model.
+- The `horizon` of the model is the total time of the trajectory
+- There are $K$ phases inside the `horizon`, each of which corresponds to an auxiliary decision variable $c_k$, which decides whether the contact is happening
+- The whole `horizon` is also divided into $T$ time steps where the cost function is evaluated
+- $D = \dim(q)$ is the degree of freedom of the robot
+- $U$ is the number of actuated joints
+- $N$ is the number of end effectors 
+
+The parameters to be optimized is an array of size $K \times (D + N)$.
+They are interpreted as $D$ joint positions (including floating base pose) and $N$ contact variable for each end effector for $K$ phases.
+The base orientation is represented as euler angles.
+These points serve as "control points" for the trajectory.
+The trajectory itself is represents by a cubical spline.
+At each time step $t$, the joint positions $q$ and their derivatives are evaluated.
+
+This should be the right way of doing things, but that's not what I originally did.
+At the beginning of this week I parametrized the joint positions for all $T$ time steps, and I was using rotation vector for the base orientation.
+I also intuitively assumed that the corresponding part in $\dot{q}$ should be the angular velocity.
+However, my robotics course instructor told me that the time derivative of rotation vector is *not* angular velocity.
+After looking into the source code again, I found that the simulator represented the floating base as 6 virtual joints,
+and the rotation and its velocity is represented as euler angles.
+
+# Physics Cost
+The most difficult cost function is the physics cost.
+It evolves solving the inverse dynamics for contact forces $f$ and control signals $u$.
+Recall the inverse dynamics formula:
+
+$$ \tau(q, \dot{q}, \ddot{q}) = J(q)^{\mathrm{T}} f + B u $$
+
+- $\tau$ is easy to get knowing $q$, $\dot{q}$ and $\ddot{q}$ since there's an exposed interface for that, a vector of $\mathbb{R}^{D}$
+- $J$ is the jacobian of all $N$ end effectors, a sparse matrix of $\mathbb{R}^{6N \times D}$
+- $B$ is the matrix mapping control space to the full joint space, a sparse matrix of $\mathbb{R}^{D \times U}$
+
+To solve for $f$ and $u$, as described in the paper, I optimize
+
+$$ \arg\min_{f, u} { \left\lVert J^{\mathrm{T}} f + B u - \tau \right\rVert^{2} + f^{\mathrm{T}} W f + u^{\mathrm{T}} R u } $$
+
+using `cvxopt`'s quadratic optimization routine.
+The routine optimizes problems of the form
+
+$$ \min {(1/2) x^{\mathrm{T}} P x + q^{\mathrm{T}} x} $$
+
+By reforming the previous formula, I get
+
+$$ 
+x = \begin{pmatrix}
+    f \\
+    u
+\end{pmatrix},
+C = \begin{pmatrix}
+    J^{T} & B
+\end{pmatrix},
+D = \begin{pmatrix}
+    W & 0 \\
+    0 & R
+\end{pmatrix},
+P = 2 \left( C^{\mathrm{T}} C + D \right),
+q = -C^{\mathrm{T}} \tau
+$$
+
+It solves the problem very quickly.
+
+# Contact Invariant Cost
+Another important cost is the contact invariant cost.
+It is relatively simple so I don't want to talk too much here.
+However I did took some time to figure out how forward kinematics could be calculated in my framework, since I needed to get the end effectors' position given the joint positions.
+
+# Next Step
+At this point the most difficult part has been implemented, I can try to minimize the cost function using `l-bfgs-b` next week and hopefully I will get a trajectory.
