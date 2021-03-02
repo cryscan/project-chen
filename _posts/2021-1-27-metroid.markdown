@@ -1,0 +1,6 @@
+---
+layout: post
+title:  "Metroid"
+categories: update
+---
+[Link to Metroid remaster]({{site.baseurl}}/assets/Matroid/Metroid.html)
