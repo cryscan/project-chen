@@ -148,3 +148,10 @@ As mentioned earlier, for monoped on flat ground, the algorithm is faster than r
 So it's possible to make it not stuck by maintaining a double-buffer.
 
 <div style="text-align: center;"><iframe width="560" height="315" src="https://www.youtube.com/embed/dfe15C1ox4M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
+# Future Works
+From now on, I have a working library for use in Unity.
+The next steps are:
+- Import terrains
+- Way points to form a longer continuous trajectory
+- Make it a game
