@@ -151,7 +151,7 @@ So it's possible to make it not stuck by maintaining a double-buffer.
 
 # Future Works
 From now on, I have a working library for use in Unity.
-The next steps are:
-- Import terrains
-- Way points to form a longer continuous trajectory
-- Make it a game
+Next I'll 
+1. Set up the double-buffer and think of a way to minimizing the control lag
+2. Develop a terrain modifier so that users can create their own terrains in Unity
+3. Implement way points so that users can create a long continuous trajectory
