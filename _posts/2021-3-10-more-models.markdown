@@ -95,3 +95,6 @@ I have been looking for ways to hack into this initialization process but failed
 Then I found that there is only one way to do that: directly set the values of the node variables after initialization but before optimization.
 Since node variables used in optimization don't contain time information, I have to re-implement the spline in Unity and then convert user-defined splines to node variable values.
 This is the work I am still working on and I will finish it in the next week.
+
+# Builds
+- [Linux Build](https://drive.google.com/file/d/1dWk0FtpIyt72BIKF64Lz5CmeSVrc1_EC/view?usp=sharing)
