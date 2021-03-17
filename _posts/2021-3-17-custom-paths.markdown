@@ -52,8 +52,11 @@ and successfully imported them to Unity.
 However, the `ipopt` solver doesn't work because the dependency of a linear solver (`HSL`) doesn't meet.
 This solver requires a licence.
 I have already sent an application and am waiting for response.
-So there is still no Windows build this week, sorry...
 
+So there is no working Windows build this week, sorry...
+However, I still attached a link since I'd like to know whether there is any dll not found error on someone elses' machine.
+
+- [Windows Build](https://drive.google.com/file/d/1zx-eZl2GfTZeYuOy4NTngPfaBk-aTbS_/view?usp=sharing)
 - [Linux Build](https://drive.google.com/file/d/1dWk0FtpIyt72BIKF64Lz5CmeSVrc1_EC/view?usp=sharing)
 
 <div style="text-align: center;"><iframe width="560" height="315" src="https://www.youtube.com/embed/0e9B8slxvFI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
