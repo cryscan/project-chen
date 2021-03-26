@@ -1,0 +1,94 @@
+<Binary>
+  <AnimationRig>
+    <Joint name="animation_Robot_001" parent="-1">
+      <Position x="0" y="0" z="0" />
+      <Rotation x="0" y="0" z="0" w="1" />
+    </Joint>
+    <Joint name="Root" parent="0">
+      <Position x="0" y="0" z="0" />
+      <Rotation x="0" y="0" z="0" w="1" />
+    </Joint>
+    <Joint name="Body" parent="1">
+      <Position x="0" y="0.65" z="0" />
+      <Rotation x="0" y="0" z="0" w="1" />
+    </Joint>
+    <Joint name="Cube" parent="2">
+      <Position x="0" y="0" z="0" />
+      <Rotation x="0" y="0" z="0" w="1" />
+    </Joint>
+    <Joint name="LB" parent="2">
+      <Position x="-0.2" y="-0.65" z="0" />
+      <Rotation x="0" y="0" z="0" w="1" />
+    </Joint>
+    <Joint name="Sphere" parent="4">
+      <Position x="0" y="0" z="0" />
+      <Rotation x="0" y="0" z="0" w="1" />
+    </Joint>
+    <Joint name="LF" parent="2">
+      <Position x="0" y="-0.6" z="0" />
+      <Rotation x="0" y="0" z="0" w="1" />
+    </Joint>
+    <Joint name="Sphere_3" parent="6">
+      <Position x="0" y="0" z="0" />
+      <Rotation x="0" y="0" z="0" w="1" />
+    </Joint>
+    <Joint name="RB" parent="2">
+      <Position x="0.2" y="-0.65" z="0" />
+      <Rotation x="0" y="0" z="0" w="1" />
+    </Joint>
+    <Joint name="Sphere_1" parent="8">
+      <Position x="0" y="0" z="0" />
+      <Rotation x="0" y="0" z="0" w="1" />
+    </Joint>
+    <Joint name="RF" parent="2">
+      <Position x="0" y="-0.6" z="0" />
+      <Rotation x="0" y="0" z="0" w="1" />
+    </Joint>
+    <Joint name="Sphere_2" parent="10">
+      <Position x="0" y="0" z="0" />
+      <Rotation x="0" y="0" z="0" w="1" />
+    </Joint>
+  </AnimationRig>
+  <Types>
+    <Type name="Locomotion" size="1" />
+    <Type name="Idle" size="1" />
+  </Types>
+  <Traits>
+    <Trait index="0" type="Locomotion" payload="00" />
+    <Trait index="1" type="Idle" payload="00" />
+  </Traits>
+  <Segments>
+    <Segment index="0" name="Run" tagIndex="0" numTags="1" markerIndex="-1" numMarkers="0" intervalIndex="0" numIntervals="1">
+      <Source firstFrame="0" numFrames="2045" />
+      <Destination firstFrame="0" numFrames="2045" />
+    </Segment>
+    <Segment index="1" name="Idle 1" tagIndex="1" numTags="2" markerIndex="-1" numMarkers="0" intervalIndex="1" numIntervals="1">
+      <Source firstFrame="0" numFrames="89" />
+      <Destination firstFrame="2045" numFrames="89" />
+    </Segment>
+  </Segments>
+  <Tags>
+    <Tag index="0" trait="0" segment="0" firstFrame="0" numFrames="2045" />
+    <Tag index="1" trait="0" segment="1" firstFrame="0" numFrames="89" />
+    <Tag index="2" trait="1" segment="1" firstFrame="0" numFrames="89" />
+  </Tags>
+  <Markers />
+  <Intervals>
+    <Interval index="0" segment="0" firstFrame="0" numFrames="2045" tagList="0" codeBook="0" />
+    <Interval index="1" segment="1" firstFrame="0" numFrames="89" tagList="1" codeBook="0" />
+  </Intervals>
+  <TagLists>
+    <TagList index="0" indices="0;" />
+    <TagList index="1" indices="1;2;" />
+  </TagLists>
+  <Metrics>
+    <Metric index="0" poseTimeSpan="0.06666667">
+      <Joint name="Body" index="2" />
+      <Joint name="LB" index="4" />
+      <Joint name="RB" index="8" />
+    </Metric>
+  </Metrics>
+  <CodeBooks>
+    <CodeBook index="0" metric="0" trait="0" />
+  </CodeBooks>
+</Binary>
