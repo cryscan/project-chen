@@ -24,7 +24,7 @@ So I integrate several preset paths into one and that one performs the best.
 
 Also to increase controllability, I record several start-stop clips and enlarge the threshold of idle pose matching.
 
-# So Who Is Chen?
+# So Who Is [Chen](https://en.touhouwiki.net/wiki/Chen)?
 <img src="{{site.baseurl}}/assets/chen.png">
 
 Until now I only use a few boxes and spheres to represent my model.
