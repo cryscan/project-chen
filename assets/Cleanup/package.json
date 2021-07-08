@@ -1,0 +1,12 @@
+{
+  "name": "summer-jam",
+  "version": "0.1.0",
+  "files": [
+    "summer_jam_bg.wasm",
+    "summer_jam.js",
+    "summer_jam.d.ts"
+  ],
+  "module": "summer_jam.js",
+  "types": "summer_jam.d.ts",
+  "sideEffects": false
+}
